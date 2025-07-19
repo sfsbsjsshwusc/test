@@ -15,5 +15,3 @@ engine_url = "/home/jetson/tensorrtx-yolov5-v6.0/yolov5/build/znjy_v3.0.engine" 
 CONF_THRESH = 0.70
 # yolo 交并比阈值
 IOU_THRESHOLD = 0.5
-            
-# #####################################################################
