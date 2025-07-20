@@ -351,13 +351,6 @@ def process_frame(frame):
 
     # 发布检测框信息
     det_pub.publish(boundingBoxes)
-    
-    # 画出检测框并显示FPS
-    # img = plot_boxes(img, result_boxes, result_scores, result_classid)
-    # cv2.putText(img, f'FPS:{int(fps)}', (7, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (125, 0, 255), 2)
-    # cv2.imshow("result", img)
-    # cv2.waitKey(1)
-
 if __name__ == "__main__":
     rospy.init_node("yolo_ros")
     
@@ -379,12 +372,8 @@ if __name__ == "__main__":
             print("无法读取视频帧")
             break
         process_frame(frame)
-        
-        # if cv2.waitKey(1) & 0xFF == 27:
-        #     print("关闭小车眼睛")
-        #     break
 
     cap.release()
-    # cv2.destroyAllWindows()
+
     
     yolov5_wrapper.destroy()
